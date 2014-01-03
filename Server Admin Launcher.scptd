@@ -1,0 +1,41 @@
+-- Server Admin Starter
+set OSversion to do shell script "sw_vers -productVersion | awk -F\".\" '{ print $2 }'"
+if OSversion is less than 8 then
+	display dialog "This app does not support 10.7 or earlier" buttons "Cancel"
+	return
+else
+	if OSversion is greater than 7 then
+		set ServerAdminApp to POSIX path of (path to me) & "Contents/Resources/ServerAdmin.app" as string
+		set resourcePath to POSIX path of (path to me) & "Contents/Resources" as string
+		set ServerKitFramework to POSIX path of (path to me) & "Contents/Resources/ServerKit.framework"
+		set ServerKitFramework1 to POSIX path of "/System/Library/PrivateFrameworks/ServerKit.framework"
+		set GeoKitFramework to POSIX path of (path to me) & "Contents/Resources/GeoKit.framework"
+		set GeoKitFramework1 to POSIX path of "/System/Library/PrivateFrameworks/GeoKit.framework"
+		
+		
+		--/System/Library/PrivateFrameworks/ServerKit.framework
+		--ServerKit is not in 10.8 or 10.9 so we make an symbolic link to the packaged copy.
+		
+		
+do shell script "
+## /System/Library/PrivateFrameworks/GeoKit.framework
+## GeoKit is in 10.8 and 10.9 but we add the packaged 10.7.5 copy to the same location via a symbolic link and move the 10.8/9 copy to "ORIGINAL" while running.
+mv \"" & GeoKitFramework1 & "\" \"" & GeoKitFramework1 & "\"ORIGINAL
+ln -fs \"" & GeoKitFramework & "\" \"" & GeoKitFramework1 & "\"
+
+## /System/Library/PrivateFrameworks/ServerKit.framework
+## ServerKit is not in 10.8 or 10.9 so we make an symbolic link to the packaged copy.
+ln -fs \"" & ServerKitFramework & "\" \"" & ServerKitFramework1 & "\"
+
+## running
+## we add our local resources to PATH and export PATH.
+export PATH=\"" & resourcePath & ":/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin\"
+\"" & ServerAdminApp & "/Contents/MacOS/Server Admin\" > /dev/null 2>&1
+
+## clean up after quitting
+rm \"" & ServerKitFramework1 & "\"
+rm \"" & GeoKitFramework1 & "\"
+mv \"" & GeoKitFramework1 & "\"ORIGINAL \"" & GeoKitFramework1 & "\"
+" with administrator privileges
+	end if
+end if
