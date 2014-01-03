@@ -39,4 +39,7 @@ Edit the AppleScripts Info.plist and add:<BR>
 <key>LSBackgroundOnly</key><BR>
 <string>1</string><BR>
 <a href="http://imgur.com/0nNL2aZ"><img src="http://i.imgur.com/0nNL2aZ.png" title="Hosted by imgur.com"/></a><BR>
+Enjoy!
 
+Bug:
+Server Admin will not save passwords to the keychain.
