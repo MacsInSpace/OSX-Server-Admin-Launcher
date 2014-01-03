@@ -30,3 +30,5 @@ Instructions:<BR>
 copy the serverkit executable from inside ServerKit.framework into the AppleScript resource folder.<BR>
 copy the geokit executable from inside GeoKit.framework into the AppleScript resource folder.<BR>
 copy Server Admin.app, GeoKit.framework and ServerKit.framework into the AppleScript resource folder.<BR>
+<a href="http://imgur.com/MG2sT4E"><img src="http://i.imgur.com/MG2sT4E.png" title="Hosted by imgur.com"/></a><BR>
+<a href="http://imgur.com/smueIzo"><img src="http://i.imgur.com/smueIzo.png" title="Hosted by imgur.com"/></a>
