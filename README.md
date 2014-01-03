@@ -16,7 +16,7 @@ Notes:
 GeoKit is in 10.8 and 10.9 but we add the packaged 10.7.5 copy to the same location via a symbolic link and move the 10.8/9 copy to "ORIGINAL" while running.
 ServerKit is not in 10.8 or 10.9 so we make an symbolic link to the packaged copy.
 This is all moved back once Server Admin has been Quit.
-We add our local 'bin' to PATH and export PATH so the system can locate ServerKit executable.
+We add our local resources forder to PATH and export PATH so the system can locate the ServerKit executable.
 
 
 
