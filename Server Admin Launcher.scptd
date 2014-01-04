@@ -38,5 +38,6 @@ else
 			rm \"" & GeoKitFramework1 & "\"
 			mv \"" & GeoKitFramework1 & "\"ORIGINAL \"" & GeoKitFramework1 & "\"
 	" with administrator privileges
+	--we need Admin to copy into /System/Library/PrivateFrameworks
 	end if
 end if
