@@ -20,7 +20,7 @@ else
 
 	do shell script "
 		## /System/Library/PrivateFrameworks/GeoKit.framework
-		## GeoKit is in 10.8 and 10.9 but we add the packaged 10.7.5 copy to the same location via a symbolic link and move the 10.8/9 copy to "ORIGINAL" while running.
+		## GeoKit is in 10.8 and 10.9 but we add the packaged 10.7.5 copy to the same location via a symbolic link and move the 10.8/9 copy to ORIGINAL while running.
 			mv \"" & GeoKitFramework1 & "\" \"" & GeoKitFramework1 & "\"ORIGINAL
 			ln -fs \"" & GeoKitFramework & "\" \"" & GeoKitFramework1 & "\"
 
