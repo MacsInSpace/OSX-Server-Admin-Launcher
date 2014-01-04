@@ -12,13 +12,9 @@ else
 		set GeoKitFramework to POSIX path of (path to me) & "Contents/Resources/GeoKit.framework"
 		set GeoKitFramework1 to POSIX path of "/System/Library/PrivateFrameworks/GeoKit.framework"
 		
-		
-		--/System/Library/PrivateFrameworks/ServerKit.framework
-		--ServerKit is not in 10.8 or 10.9 so we make an symbolic link to the packaged copy.
-	
 	tell application "Server"
 		quit
-		--server.app used Geokit so cant be running.
+		--server.app uses Geokit so cant be running.
 	end tell	
 
 
