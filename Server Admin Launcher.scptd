@@ -4,7 +4,6 @@ if OSversion is less than 8 then
 	display dialog "This app does not support 10.7 or earlier" buttons "Cancel"
 	return
 else
-	if OSversion is greater than 7 then
 		set ServerAdminApp to POSIX path of (path to me) & "Contents/Resources/Server Admin.app" as string
 		set resourcePath to POSIX path of (path to me) & "Contents/Resources" as string
 		set ServerKitFramework to POSIX path of (path to me) & "Contents/Resources/ServerKit.framework"
@@ -39,5 +38,4 @@ else
 			mv \"" & GeoKitFramework1 & "\"ORIGINAL \"" & GeoKitFramework1 & "\"
 	" with administrator privileges
 	--we need Admin to copy into /System/Library/PrivateFrameworks
-	end if
 end if
